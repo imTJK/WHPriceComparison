@@ -15,6 +15,7 @@ class McnerdSpider(scrapy.Spider):
         for link in self.links:
             yield response.follow()
 
+
         filename = f'quotes-{page}.html'
         with open(filename, 'wb') as f:
             f.write(response.body)
